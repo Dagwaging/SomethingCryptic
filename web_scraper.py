@@ -15,6 +15,7 @@ def scrape(question):
     html = response.text
     part = html[html.find(ANSWER_TAG)+len(ANSWER_TAG):]
     answer = part[1:part.find("</span>")]
+# jehl
 #     print response.url + "\n"
 #     print response.text
 #     print "answer = *" + answer + "*"
