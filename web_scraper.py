@@ -15,9 +15,11 @@ def scrape(question):
     html = response.text
     part = html[html.find(ANSWER_TAG)+len(ANSWER_TAG):]
     answer = part[1:part.find("</span>")]
-
 #     print response.url + "\n"
 #     print response.text
 #     print "answer = *" + answer + "*"
+    if answer.startswith("ttp://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"):
+        print "No answer found for the question \""  + question + "\""
+        raise Exception("No answer found for the question \""  + question + "\"")
     return "What is " + answer + "?"
     
